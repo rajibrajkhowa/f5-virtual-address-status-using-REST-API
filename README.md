@@ -18,7 +18,7 @@ eg. ./f5_va_status_v2 test TEST-F5 va_10.0.1.12
 v3:
 This script takes in list of load balancers and VIPs/VAs and then loops over them to see which VAs/VIPs are configured in which load balancer and what is the status of the VA/VIP. Usually if we get a returned value of "null" under the status (i.e. "enabled" field) it indicates that specific VIP is not present in that LB. Otherwise it will return either "enabled": "yes" or "enabled": "no" to indicate UP or DOWN status respectively.
 
-./f5_va_status_v2 <User ID>
+./f5_va_status_v3 <User ID>
 
-eg. ./f5_va_status_v2 test
+eg. ./f5_va_status_v3 test
 
