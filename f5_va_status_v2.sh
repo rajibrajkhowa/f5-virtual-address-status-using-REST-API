@@ -20,7 +20,6 @@ echo
 VIP_STATUS=$(get_virtual_address_status | jq '.enabled' | tr -d '"')
 
 jq -nc \
-
 --arg lb_host "$F5_HOST"\
 --arg vip "$VIRTUAL_ADDRESS" \
 --arg vip_status "$VIP_STATUS" \
