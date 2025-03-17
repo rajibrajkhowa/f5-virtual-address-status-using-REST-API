@@ -14,9 +14,9 @@ while read F5_HOST; do
          -X GET "https://$F5_HOST/mgmt/tm/ltm/virtual-address/$VIRTUAL_ADDRESS"
      }
 	 VIP_STATUS=$(get_virtual_address_status | jq '.enabled' | tr -d '"')
-     sleep 5
+     sleep 2
      jq -nc \
-	 --arg lb_host "$F5_HOST"\
+     --arg lb_host "$F5_HOST"\
      --arg vip "$VIRTUAL_ADDRESS" \
      --arg vip_status "$VIP_STATUS" \
     '{
