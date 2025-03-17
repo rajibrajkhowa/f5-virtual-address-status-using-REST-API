@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Variables Passed As Arguments
-F5_HOST=$1
-F5_USER=$2
+F5_USER=$1
+F5_NODE=$2
 F5_PASS=$(<password.txt)
 VIRTUAL_ADDRESS=$3
 
@@ -20,9 +20,12 @@ echo
 VIP_STATUS=$(get_virtual_address_status | jq '.enabled' | tr -d '"')
 
 jq -nc \
+
+--arg lb_host "$F5_HOST"\
 --arg vip "$VIRTUAL_ADDRESS" \
 --arg vip_status "$VIP_STATUS" \
 '{
+   "LB HOST": $lb_host,
    "VIP": $vip,
    "VIP_ENABLED": $vip_status
   }'
