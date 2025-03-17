@@ -20,7 +20,7 @@ while read F5_HOST; do
      --arg vip "$VIRTUAL_ADDRESS" \
      --arg vip_status "$VIP_STATUS" \
     '{
-	  "LB HOST": $lb_host,
+      "LB HOST": $lb_host,
       "VIP": $vip,
       "VIP_ENABLED": $vip_status
      }' >> output.txt
