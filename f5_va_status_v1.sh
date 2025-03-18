@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Variables Passed As Arguments
-F5_HOST=$1
-F5_USER=$2
+F5_USER=$1
+F5_HOST=$2
 F5_PASS=$(<password.txt)
 VIRTUAL_ADDRESS=$3
 
